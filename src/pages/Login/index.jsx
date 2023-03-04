@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import * as yup from "yup";
 import axios from "axios";
 import { API_URL } from "./../../config/api";
 
@@ -19,13 +18,12 @@ import {
   StyledButton,
   StyledForm,
   StyledImg,
-  StyledLink,
   StyledOR,
   SubmitButton,
 } from "./style";
-
-const regularExpression =
-  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+import { schema } from "./validation";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 function Login() {
   const { loading, setLoading, errors, setErrors, setToken, setAuthorized } =
@@ -39,19 +37,6 @@ function Login() {
     e.preventDefault();
     setPasswordType(passwordType === "password" ? "text" : "password");
   };
-
-  const schema = yup.object().shape({
-    email: yup
-      .string()
-      .email("Invalid email")
-      .required("User Name is required"),
-
-    password: yup
-      .string()
-      .min(8, "Password must be at least 8 characters long")
-      .matches(regularExpression, "Invalid Password")
-      .required("Password is required"),
-  });
 
   const handleChangeInput = (e) => {
     const { value, id } = e.target;
@@ -96,7 +81,10 @@ function Login() {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
+    <> 
+      <Header form/>
+    
+      <StyledForm onSubmit={handleSubmit}>
       <Register>Log in to Freelance Platform</Register>
 
       <InputWrapper>
@@ -150,8 +138,10 @@ function Login() {
       </StyledButton>
 
       <AlredyAccount>Don’t have an Freelance account?</AlredyAccount>
-      <StyledLink to="/signup"> Sign Up now</StyledLink>
+      <StyledButton to="/signup"> Sign Up now</StyledButton>
     </StyledForm>
+    <Footer form/>
+    </>
   );
 }
 

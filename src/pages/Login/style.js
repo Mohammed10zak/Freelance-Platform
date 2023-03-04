@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   border: 1px solid #999;
   box-shadow: 0px 3px 10px rgba(32, 32, 32, 0.1);
@@ -46,7 +45,7 @@ export const InputWrapper = styled.div`
   }
   & input {
     width: 20rem;
-    padding: 1rem;
+    padding: 0.8rem;
     border-radius: 10px;
     border: 1px solid #ccc;
     font-size: 14px;
@@ -64,7 +63,7 @@ export const ShowPassword = styled.img`
   position: absolute;
   width: 1.3rem;
   height: 1.3rem;
-  top: 45px;
+  top: 42px;
   left: 330px;
   cursor: pointer;
 
@@ -171,5 +170,5 @@ export const ErrorMessage = styled.span`
   color: red;
   font-size: 16px;
   font-family: "Arial";
-  margin: 10px auto;
+  margin: 10px;
 `;
