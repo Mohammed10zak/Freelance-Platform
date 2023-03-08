@@ -18,6 +18,7 @@ import {
   StyledButton,
   StyledForm,
   StyledImg,
+  StyledLink,
   StyledOR,
   SubmitButton,
 } from "./style";
@@ -58,11 +59,13 @@ function Login() {
       .then(async () => {
         const res = await axios.post(`${API_URL}/users/login`, {
           email: email,
+
           password: password,
         });
         if (res) {
           setToken(res.data.token);
           localStorage.setItem("token", res.data.token);
+          localStorage.setItem("name", res.data.name);
 
           setToken(res.data.token);
           setErrors([]);
@@ -76,71 +79,71 @@ function Login() {
           return acc;
         }, {});
         setErrors(errors);
-        setLoading();
+        setLoading(false);
       });
   };
 
   return (
-    <> 
-      <Header form/>
-    
+    <>
+      <Header form />
+
       <StyledForm onSubmit={handleSubmit}>
-      <Register>Log in to Freelance Platform</Register>
+        <Register>Log in to Freelance Platform</Register>
 
-      <InputWrapper>
-        <label htmlFor="username">Username or Email</label>
-        <input
-          type="email"
-          id="username"
-          onChange={handleChangeInput}
-          value={email}
-          placeholder="Email or phone"
-        />
-      </InputWrapper>
-      {errors && errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
-      <InputWrapper>
-        <label htmlFor="password">Password</label>
-        <input
-          type={passwordType}
-          id="password"
-          onChange={handleChangeInput}
-          value={password}
-          placeholder="Type Here"
-        />
+        <InputWrapper>
+          <label htmlFor="username">Username or Email</label>
+          <input
+            type="email"
+            id="username"
+            onChange={handleChangeInput}
+            value={email}
+            placeholder="Email or phone"
+          />
+        </InputWrapper>
+        {errors && errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
+        <InputWrapper>
+          <label htmlFor="password">Password</label>
+          <input
+            type={passwordType}
+            id="password"
+            onChange={handleChangeInput}
+            value={password}
+            placeholder="Type Here"
+          />
 
-        {errors && errors.password && (
-          <ErrorMessage>{errors.password}</ErrorMessage>
-        )}
-        <ShowPassword
-          src={passwordshow}
-          alt="passwordshow"
-          className="passwordshow"
-          onClick={handlePasswordShow}
-        />
-      </InputWrapper>
+          {errors && errors.password && (
+            <ErrorMessage>{errors.password}</ErrorMessage>
+          )}
+          <ShowPassword
+            src={passwordshow}
+            alt="passwordshow"
+            className="passwordshow"
+            onClick={handlePasswordShow}
+          />
+        </InputWrapper>
 
-      <SubmitButton type="submit">
-        {loading ? "loading..." : "  Log In"}
-      </SubmitButton>
+        <SubmitButton type="submit">
+          {loading ? "loading..." : "  Log In"}
+        </SubmitButton>
 
-      <StyledOR>
-        <div></div> <span>or</span> <div></div>
-      </StyledOR>
+        <StyledOR>
+          <div></div> <span>or</span> <div></div>
+        </StyledOR>
 
-      <StyledButton facebook={apple}>
-        <StyledImg src={google} alt="google" />
-        Continue with Google
-      </StyledButton>
+        <StyledButton facebook={apple}>
+          <StyledImg src={google} alt="google" />
+          Continue with Google
+        </StyledButton>
 
-      <StyledButton>
-        <StyledImg src={apple} alt="facebook" facebook={apple} />
-        Continue with apple
-      </StyledButton>
+        <StyledButton>
+          <StyledImg src={apple} alt="facebook" facebook={apple} />
+          Continue with apple
+        </StyledButton>
 
-      <AlredyAccount>Don’t have an Freelance account?</AlredyAccount>
-      <StyledButton to="/signup"> Sign Up now</StyledButton>
-    </StyledForm>
-    <Footer form/>
+        <AlredyAccount>Don’t have an Freelance account?</AlredyAccount>
+        <StyledLink to="/signup"> Sign Up now</StyledLink>
+      </StyledForm>
+      <Footer form />
     </>
   );
 }

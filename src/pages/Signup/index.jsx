@@ -96,113 +96,111 @@ const Signup = () => {
         }, {});
 
         setErrors(errors);
-        setLoading();
+        setLoading(false);
       });
   };
   return (
     <>
-      <Header form/>
+      <Header form />
 
-    <StyledForm onSubmit={handleSubmit}>
-      <Register>Sign up to find work you love</Register>
+      <StyledForm onSubmit={handleSubmit}>
+        <Register>Sign up to find work you love</Register>
 
-      <StyledButton>
-        <StyledImg src={apple} alt="facebook" facebook={apple} />
-        Continue with apple
-      </StyledButton>
-      <StyledButton facebook={apple}>
-        <StyledImg src={google} alt="google" />
-        Continue with Google
-      </StyledButton>
-      <StyledOR>
-        <div></div> <span>or</span> <div></div>
-      </StyledOR>
+        <StyledButton>
+          <StyledImg src={apple} alt="facebook" facebook={apple} />
+          Continue with apple
+        </StyledButton>
+        <StyledButton facebook={apple}>
+          <StyledImg src={google} alt="google" />
+          Continue with Google
+        </StyledButton>
+        <StyledOR>
+          <div></div> <span>or</span> <div></div>
+        </StyledOR>
 
-      <InputFullName>
-        <div>
-          <label htmlFor="firstname">First Name</label>
-          <input
-            type="text"
-            id="firstname"
-            onChange={handleChangeInput}
-            value={firstname}
-            placeholder="Type here"
-          />
-        </div>
+        <InputFullName>
+          <div>
+            <label htmlFor="firstname">First Name</label>
+            <input
+              type="text"
+              id="firstname"
+              onChange={handleChangeInput}
+              value={firstname}
+              placeholder="Type here"
+            />
+          </div>
 
-        <div>
-          <label htmlFor="lastname">Last Name</label>
-          <input
-            type="text"
-            id="lastname"
-            onChange={handleChangeInput}
-            value={lastname}
-            placeholder="Type here"
-          />
-        </div>
-      </InputFullName>
-      {errors && errors.firstname && (
-        <ErrorMessage>{errors.firstname}</ErrorMessage>
-      )}
-      {errors && errors.lastname && (
-        <ErrorMessage>{errors.lastname}</ErrorMessage>
-      )}
-      <InputWrapper>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          onChange={handleChangeInput}
-          value={email}
-          placeholder="Email "
-        />
-      </InputWrapper>
-      {errors && errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
-      <InputWrapper>
-        <label htmlFor="password">Password</label>
-        <input
-          type={passwordType}
-          id="password"
-          onChange={handleChangeInput}
-          value={password}
-          placeholder="Password (8 or more characters)"
-        />
-
-        {errors && errors.password && (
-          <ErrorMessage>{errors.password}</ErrorMessage>
+          <div>
+            <label htmlFor="lastname">Last Name</label>
+            <input
+              type="text"
+              id="lastname"
+              onChange={handleChangeInput}
+              value={lastname}
+              placeholder="Type here"
+            />
+          </div>
+        </InputFullName>
+        {errors && errors.firstname && (
+          <ErrorMessage>{errors.firstname}</ErrorMessage>
         )}
-        <ShowPassword
-          src={passwordshow}
-          alt="passwordshow"
-          className="passwordshow"
-          onClick={handlePasswordShow}
-        />
-      </InputWrapper>
+        {errors && errors.lastname && (
+          <ErrorMessage>{errors.lastname}</ErrorMessage>
+        )}
+        <InputWrapper>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            onChange={handleChangeInput}
+            value={email}
+            placeholder="Email "
+          />
+        </InputWrapper>
+        {errors && errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
+        <InputWrapper>
+          <label htmlFor="password">Password</label>
+          <input
+            type={passwordType}
+            id="password"
+            onChange={handleChangeInput}
+            value={password}
+            placeholder="Password (8 or more characters)"
+          />
 
-      <CheckedInputWrapper>
-        <input
-          type="checkbox"
-          id="checked"
-          onChange={handleChangeInput}
-          checked={checked}
-        />
-        <label htmlFor="checked">
-          Yes, I agree to the freelnace Terms of Service
-        </label>
-      </CheckedInputWrapper>
-      {errors && errors.checked && (
-        <ErrorMessage>{errors.checked}</ErrorMessage>
-      )}
-      <SubmitButton type="submit">
-        {loading ? "loading..." : "Create My Account"}
-      </SubmitButton>
+          {errors && errors.password && (
+            <ErrorMessage>{errors.password}</ErrorMessage>
+          )}
+          <ShowPassword
+            src={passwordshow}
+            alt="passwordshow"
+            className="passwordshow"
+            onClick={handlePasswordShow}
+          />
+        </InputWrapper>
 
-      <AlredyAccount>
-        Already have an account?
+        <CheckedInputWrapper>
+          <input
+            type="checkbox"
+            id="checked"
+            onChange={handleChangeInput}
+            checked={checked}
+          />
+          <label htmlFor="checked">
+            Yes, I agree to the freelnace Terms of Service
+          </label>
+        </CheckedInputWrapper>
+        {errors && errors.checked && (
+          <ErrorMessage>{errors.checked}</ErrorMessage>
+        )}
+        <SubmitButton type="submit">
+          {loading ? "loading..." : "Create My Account"}
+        </SubmitButton>
+
+        <AlredyAccount>Already have an account?</AlredyAccount>
         <StyledLink to="/login"> Log In</StyledLink>
-      </AlredyAccount>
-    </StyledForm>
-    <Footer form/>
+      </StyledForm>
+      <Footer form />
     </>
   );
 };
