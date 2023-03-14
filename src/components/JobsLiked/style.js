@@ -5,11 +5,9 @@ export const Jobs = styled.div`
   border: 1px solid #e4ebe4;
   margin-top: 16px;
   border-radius: 10px;
-`;
-export const Title = styled.h3`
-  letter-spacing: 2px;
-  font-size: 28px;
-  margin-left: 10px;
-  font-weight: 700;
   padding: 10px;
+`;
+export const Title = styled.h2`
+  margin-left: 10px;
+  font-weight: 600;
 `;

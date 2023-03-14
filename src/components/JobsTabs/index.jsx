@@ -1,12 +1,16 @@
-import * as React from "react";
+import { useState } from "react";
+
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+
 import JobDetails from "./../JobDetails/index";
 import MostRecent from "../MostRecent";
 import Savedjob from "../Savedjob";
+
+import { useJobContext } from "../../context/jobContext";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -42,25 +46,27 @@ function a11yProps(index) {
 }
 
 export default function BasicTabs() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
+
+  const { state } = useJobContext();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <Box sx={{ width: "820px" }}>
+    <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
           value={value}
           onChange={handleChange}
-          textColor="black"
+          textColor="inherit"
           indicatorColor="primary"
           aria-label="secondary tabs example"
         >
           <Tab label="Best Matches" {...a11yProps(0)} />
           <Tab label="Most Recent" {...a11yProps(1)} />
-          <Tab label="Saved Jobs" {...a11yProps(2)} />
+          <Tab label={`Saved Jobs (${state.count})`} {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
