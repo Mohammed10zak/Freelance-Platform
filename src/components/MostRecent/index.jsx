@@ -1,15 +1,25 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+
+import axios from "axios";
+
+import { Button, Divider } from "@mui/material";
+
 import JobCard from "../JobCard";
+import { Text } from "../JobDetails";
 
 const MostRecent = () => {
   const [mostJob, setMostJob] = useState([]);
+  const [count, setCount] = useState(3);
+
+  const handleLoadJobs = () => {
+    setCount((prevCount) => prevCount + 3);
+  };
 
   useEffect(() => {
     (async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3000/jobs?_sort=id&_order=desc"
+          `http://localhost:3000/jobs?_sort=id&_order=desc_page=1&_limit=${count}`
         );
         if (res) {
           setMostJob(res.data);
@@ -18,16 +28,25 @@ const MostRecent = () => {
         console.log(error);
       }
     })();
-  }, []);
+  }, [count]);
 
   return (
     <>
-      <p>
+      <Text>
         Browse the most recent jobs that match your skills and profile
         description to the skills clients are looking for.
-      </p>
+      </Text>
 
       <JobCard Jobdetails={mostJob} />
+      <Divider variant="fullWidth" />
+      <Button
+        onClick={handleLoadJobs}
+        variant="outlined"
+        color="success"
+        style={{ borderRadius: "6px", margin: "10px 300px" }}
+      >
+        load more
+      </Button>
     </>
   );
 };
