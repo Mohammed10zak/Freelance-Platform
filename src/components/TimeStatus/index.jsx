@@ -49,11 +49,11 @@ const TimeStatus = () => {
     <StatusOfTime>
       <div>
         <Time>
-          {dayOfWeek},{monthOfYear} {dateOfMonth}
+          {dayOfWeek}, {monthOfYear} {dateOfMonth}
           {getOrdinalSuffix(dateOfMonth)}
         </Time>
         <Status>
-          {timeOfDay},{name}
+          {timeOfDay}, {name}
         </Status>
       </div>
       <img src={status} alt="status" />
