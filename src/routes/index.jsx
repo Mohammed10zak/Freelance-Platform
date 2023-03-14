@@ -12,11 +12,9 @@ const Login = lazy(() => import("../pages/Login/index"));
 const Signup = lazy(() => import("../pages/Signup/index"));
 const Home = lazy(() => import("../pages/Home/index"));
 const Filter = lazy(() => import("./../pages/Filter/index"));
+const Profile = lazy(() => import("./../pages/Profile/index"));
+const JobDetails = lazy(() => import("./../pages/JobDetails/index"));
 
-// const TechStoreList = lazy(() => import("../pages/TechStorelist/index"));
-// const Electronic = lazy(() => import("../pages/Electronic/index"));
-// const ProductDetails = lazy(() => import("../pages/ProductDetails/index"));
-// const Cart = lazy(() => import("../pages/BasicCart"));
 
 const Routers = () => {
   const { authorized, setAuthorized, setToken } = useAuthContext();
@@ -46,6 +44,9 @@ const Routers = () => {
         <Route path="/" element={<ProtectedRoute />}>
           <Route path="/home" element={<Home />} />
           <Route path="/filter" element={<Filter />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/redirect" element={<Navigate to={"/profile"} />} />
+          <Route path="/JobDetails/:id" element={<JobDetails/>} />
 
         </Route>
         <Route path="/*" element={<h3>Page not Found</h3>} />
