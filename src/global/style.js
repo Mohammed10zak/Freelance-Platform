@@ -3,6 +3,10 @@ import styled, { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Arial';
 }
@@ -24,9 +28,11 @@ ul {
 `;
 
 export const Container = styled.div`
+  display: flex;
+  justify-content: space-around;
   padding: 0 1%;
-  min-height: 300px;
   margin: 30px auto;
   transition: all 0.5s;
   width: 1200px;
+
 `;
