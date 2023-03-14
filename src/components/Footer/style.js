@@ -10,8 +10,12 @@ export const StyledFooter = styled.footer`
   padding: 10px;
   align-items: center;
   gap: 20px;
-  @media (min-width: 300px) and (max-width: 1200px) {
+  @media (min-width: 300px) and (max-width: 700px) {
     width: 400px;
+  }
+
+  @media (min-width: 701px) and (max-width: 1200px) {
+    width: 1300px;
   }
 `;
 
@@ -29,7 +33,7 @@ export const Ul = styled.div`
     cursor: pointer;
   }
 
-  @media (min-width: 300px) and (max-width: 1200px) {
+  @media (min-width: 300px) and (max-width: 700px) {
     display: block;
     width: 400px;
   }
@@ -40,7 +44,7 @@ export const Icon = styled.img`
   height: 20px;
   vertical-align: bottom;
   margin-left: 20px;
-  @media (min-width: 300px) and (max-width: 1200px) {
+  @media (min-width: 300px) and (max-width: 700px) {
     display: block;
     margin-bottom: 5px;
   }
@@ -54,7 +58,7 @@ export const Icons = styled.div`
   border-bottom: 1px solid #ffffff;
   display: flex;
   justify-content: space-between;
-  @media (min-width: 300px) and (max-width: 1200px) {
+  @media (min-width: 300px) and (max-width: 700px) {
     display: block;
     margin-left: 70px;
     width: 400px;
@@ -65,7 +69,7 @@ export const Foot2 = styled.div`
   letter-spacing: 2px;
   font-size: 10px;
 
-  @media (min-width: 300px) and (max-width: 1200px) {
+  @media (min-width: 300px) and (max-width: 700px) {
     display: block;
     margin-left: 50px;
     font-size: 8px;
