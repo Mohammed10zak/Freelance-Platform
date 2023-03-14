@@ -1,8 +1,12 @@
-import { useReducer } from "react"
-const savedJobs=JSON.parse(localStorage.getItem("savedJobs")) || []
-const initialState = { jobs:savedJobs,
-  count: parseInt(localStorage.getItem("count")) || 0 };
- 
+import { useReducer } from "react";
+
+const savedJobs = JSON.parse(localStorage.getItem("savedJobs")) || [];
+
+const initialState = {
+  jobs: savedJobs,
+  count: parseInt(localStorage.getItem("count")) || 0,
+};
+
 const ACTIONS = {
   SAVE_JOB: "addToSaved",
   UN_SAVE_JOB: "removeFromSaved",
