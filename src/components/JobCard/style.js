@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const Cardjob = styled.div`
   position: relative;
-  padding: 20px 50px;
+margin: 10px 0px;
+padding:10px;
+border-bottom:1px solid #999;
   &:hover {
     background-color: #f2f7f2;
     border-radius: 6px;
