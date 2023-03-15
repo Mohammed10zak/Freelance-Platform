@@ -10,7 +10,6 @@ import JobdetailsCard from "./JobdetailsCard";
 import { motion as mt } from "framer-motion";
 
 import { Title } from "./style";
-import { CRUDS_API_URL } from "../../config/api";
 
 const JobDetails = () => {
   const { id } = useParams();
@@ -20,7 +19,7 @@ const JobDetails = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get(`${CRUDS_API_URL}/jobs/${id}`);
+        const res = await axios.get(`${process.env.REACT_APP_CRUDS_API_URL}/jobs/${id}`);
         if (res) {
           setJobDetails(res.data);
           console.log(res.data);

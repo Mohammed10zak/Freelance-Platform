@@ -10,7 +10,6 @@ import axios from "axios";
 import { useAuthContext } from "../../context/AuthContext";
 
 import { Iconsearch, Search } from "./style";
-import { CRUDS_API_URL } from "../../config/api";
 
 const Searchbox = ({ width }) => {
   const [allJobs, setAllJobs] = useState([]);
@@ -22,7 +21,7 @@ const Searchbox = ({ width }) => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get(`${CRUDS_API_URL}/jobs`);
+        const res = await axios.get(`${process.env.REACT_APP_CRUDS_API_URL}/jobs`);
 
         if (res) {
           setAllJobs(res.data);

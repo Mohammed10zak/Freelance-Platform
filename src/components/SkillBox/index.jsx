@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 import { Button } from '@mui/material';
-import { CRUDS_API_URL } from "../../config/api";
 
 export default function SkillBox(props) {
   const [skills, setSkills] = useState([]);
@@ -22,7 +21,7 @@ export default function SkillBox(props) {
   useEffect(() => {
     (async () => {
       try {
-        var res1 = await axios.get(`${CRUDS_API_URL}/skills`);
+        var res1 = await axios.get(`${process.env.REACT_APP_CRUDS_API_URL}/skills`);
         if (res1.data) {
           setSkills(res1.data);
         }
@@ -31,7 +30,7 @@ export default function SkillBox(props) {
       }
       try {
         const res = await axios.get(
-          `${CRUDS_API_URL}/personalInformation/1`
+          `${process.env.REACT_APP_CRUDS_API_URL}/personalInformation/1`
         );
         if (res.data) {
           setChoosenSkills(res.data.skills);
@@ -62,7 +61,7 @@ export default function SkillBox(props) {
     (async () => {
       try {
         const res = await axios.put(
-          `${CRUDS_API_URL}/personalInformation/1`,
+          `${process.env.REACT_APP_CRUDS_API_URL}/personalInformation/1`,
           {
             rate: rate,
             overview: overview,

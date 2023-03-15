@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import axios from "axios";
-import { API_URL } from "./../../config/api";
 
 import google from "../../assets/google.svg";
 import apple from "../../assets/apple.png";
@@ -60,7 +59,7 @@ function Login() {
         { abortEarly: false }
       )
       .then(async () => {
-        const res = await axios.post(`${API_URL}/users/login`, {
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/users/login`, {
           email: email,
 
           password: password,

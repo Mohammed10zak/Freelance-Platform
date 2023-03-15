@@ -11,7 +11,6 @@ import Modal from "@mui/material/Modal";
 import styled from "styled-components";
 import EditIcon from "@mui/icons-material/Edit";
 import { Input } from "@mui/material";
-import { CRUDS_API_URL } from "../../config/api";
 
 const style = {
   position: "absolute",
@@ -42,7 +41,7 @@ const TitleModal = () => {
     (async () => {
       try {
         const res = await axios.get(
-          `${CRUDS_API_URL}/personalInformation`
+          `${process.env.REACT_APP_CRUDS_API_URL}/personalInformation`
         );
         if (res) {
           setNewTitle(res.data[0].title);
@@ -68,7 +67,7 @@ const TitleModal = () => {
     (async () => {
       try {
         const res = await axios.put(
-          `${CRUDS_API_URL}/personalInformation/1`,
+          `${process.env.REACT_APP_CRUDS_API_URL}/personalInformation/1`,
           {
             title: newTitle,
             overview: overView,

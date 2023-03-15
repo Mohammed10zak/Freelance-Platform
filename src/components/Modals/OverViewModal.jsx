@@ -7,7 +7,6 @@ import axios from "axios";
 import { Navigate } from "react-router-dom";
 import EditIcon from "@mui/icons-material/Edit";
 import styled from "styled-components";
-import { CRUDS_API_URL } from "../../config/api";
 
 const style = {
   position: "absolute",
@@ -39,7 +38,7 @@ const   OverViewModal = () => {
     (async () => {
       try {
         const res = await axios.get(
-          `${CRUDS_API_URL}/personalInformation`
+          `${process.env.REACT_APP_CRUDS_API_URL}/personalInformation`
         );
         if (res) {
           setNewOverView(res.data[0].overview);
@@ -65,7 +64,7 @@ const   OverViewModal = () => {
     (async () => {
       try {
         const res = await axios.put(
-          `${CRUDS_API_URL}/personalInformation/1`,
+          `${process.env.REACT_APP_CRUDS_API_URL}/personalInformation/1`,
           {
             overview: newOverView,
             title: title,
