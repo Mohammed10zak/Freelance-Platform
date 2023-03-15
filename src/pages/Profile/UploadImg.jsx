@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 
 import { useAuthContext } from "../../context/AuthContext";
+import { CRUDS_API_URL } from "../../config/api";
 
 const UploadImg = ({ click }) => {
   const { img, setImg } = useAuthContext();
@@ -11,7 +12,7 @@ const UploadImg = ({ click }) => {
     (async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3000/personalInformation"
+          `${CRUDS_API_URL}/personalInformation`
         );
         if (res) {
           setImg(res.data[0].image);

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import JobCard from "../../components/JobCard";
+import { CRUDS_API_URL } from "../../config/api";
 
 const SearchedJobs = () => {
   const [filterJob, setFilterJob] = useState([]);
@@ -10,7 +11,7 @@ const SearchedJobs = () => {
     (async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/jobs?title_like=${searchValue}`
+          `${CRUDS_API_URL}/jobs?title_like=${searchValue}`
         );
 
         if (res) {
