@@ -501,8 +501,7 @@ export default function SimpleAccordion() {
               <FormControlLabel
                 control={<Checkbox color="success" />}
                 label="
-                2 or less connects
-"
+                2 or less connects"
               />
               <FormControlLabel
                 control={<Checkbox color="success" />}
