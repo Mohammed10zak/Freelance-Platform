@@ -99,7 +99,7 @@ export default function SkillBox(props) {
               <Chip
                 label={option.title}
                 {...getTagProps({ index })}
-                style={{ background: "#108A00", color: "#fff" }}
+                style={{ background: "#219a10", color: "#fff" }}
               />
             ))
           }
