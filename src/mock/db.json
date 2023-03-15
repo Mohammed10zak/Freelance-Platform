@@ -182,22 +182,10 @@
   ],
   "personalInformation": [
     {
-      "rate": "10",
-      "overview": "As a front-end developer, I believe that styles are fleeting, but a great\nuser experience is timeless. With a passion for building user-friendly\nand intuitive interfaces, I help businesses design and develop\nproducts that fit the needs of their customers and make a lasting\nimpression.\nWhether it's a website, application, I take a customer-centric\napproach to design and development. By understanding the needs\nand behavior of target audience, I can create interfaces that are both\naesthetically pleasing and highly functional.\nLet me help you take your business to the next level with a user\nexperience that truly stands out.",
-      "title": "Web Development | FrontEnd ",
+      "title": "Web Development | FrontEnd Developmment",
+      "overview": "As a front-end developer, I believe that styles are fleeting, but a great\nuser experience is timeless. With a passion for building user-friendly\nand intuitive interfaces, I help businesses design and develop\nproducts that fit the needs of their customers and make a lasting\nimpression.\nWhether it's a website, application, I take a customer-centric\napproach to design and development. By understanding the needs\nand behavior of target audience, I can create interfaces that are both\naesthetically pleasing and highly functional.\nLet me help you take your business to the next level with a user\n",
+      "rate": "1",
       "skills": [
-        {
-          "id": 1,
-          "title": "react"
-        },
-        {
-          "id": 9,
-          "title": "AI"
-        },
-        {
-          "id": 15,
-          "title": "java"
-        },
         {
           "id": 8,
           "title": "UI"
@@ -209,9 +197,17 @@
         {
           "id": 16,
           "title": "python"
+        },
+        {
+          "id": 6,
+          "title": "php"
+        },
+        {
+          "id": 7,
+          "title": "laravel"
         }
       ],
-      "image": "https://picsum.photos/400",
+      "image": "https://i.postimg.cc/N020TZkM/mh.jpg",
       "id": 1
     }
   ],

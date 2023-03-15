@@ -91,7 +91,7 @@ const TitleModal = () => {
     padding: 15px;
     border-radius: 50%;
     position: absolute;
-    right:-2px;
+    right: -2px;
     top: 0px;
     border: 1px solid #999;
     display: flex;
@@ -127,7 +127,9 @@ const TitleModal = () => {
               style={{ width: "400px", margin: "10px 0px" }}
             />
             <div style={{ width: "fit-content", marginLeft: "auto" }}>
-              <Button type="submit" color="success">save</Button>{" "}
+              <Button type="submit" color="success">
+                save
+              </Button>{" "}
               <Button type="button" onClick={handleClose} color="error">
                 cancel
               </Button>

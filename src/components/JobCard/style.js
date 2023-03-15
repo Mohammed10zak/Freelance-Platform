@@ -29,6 +29,7 @@ export const Jobdetail = styled.div`
 `;
 
 export const JobDescription = styled.p`
+cursor: pointer;
 `;
 
 export const ToggleSaveBtn = styled.button`
@@ -53,5 +54,4 @@ export const SeeMore = styled.span`
   display: inline;
   color: #108a00;
   cursor: pointer;
-
 `;

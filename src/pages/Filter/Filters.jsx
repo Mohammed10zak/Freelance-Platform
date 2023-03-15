@@ -161,7 +161,7 @@ export default function SimpleAccordion() {
                 display: "flex",
                 alignItems: "center",
                 marginLeft: "10px",
-                width: 250,
+                width: 200,
                 borderRadius: "20px",
                 border: "1px solid #999",
               }}
@@ -374,7 +374,7 @@ export default function SimpleAccordion() {
                 display: "flex",
                 alignItems: "center",
                 marginLeft: "10px",
-                width: 250,
+                width: 200,
                 borderRadius: "20px",
                 border: "1px solid #999",
               }}
@@ -409,7 +409,7 @@ export default function SimpleAccordion() {
                 display: "flex",
                 alignItems: "center",
                 marginLeft: "10px",
-                width: 250,
+                width: 200,
                 borderRadius: "20px",
                 border: "1px solid #999",
               }}

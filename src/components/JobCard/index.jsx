@@ -22,8 +22,8 @@ const JobCard = ({ Jobdetails }) => {
 
   const [seeMore, setSeeMore] = useState(false);
 
-  const fullDescription = () => {
-    setSeeMore(true);
+  const fullDescription = (id) => {
+    setSeeMore(seeMore === id ? false : id);
   };
 
   useEffect(() => {
@@ -50,11 +50,11 @@ const JobCard = ({ Jobdetails }) => {
             </Jobdetail>
 
             <JobDescription>
-              {seeMore
+              {seeMore === detail.id
                 ? detail.description
                 : `${detail.description.slice(0, 200)}`}
-              <SeeMore onClick={fullDescription}>
-                {seeMore ? "... less" : "... more"}
+              <SeeMore onClick={() => fullDescription(detail.id)}>
+                {seeMore === detail.id ? "... less" : "... more"}
               </SeeMore>
             </JobDescription>
 
@@ -116,6 +116,7 @@ const JobCard = ({ Jobdetails }) => {
               </span>
             </Jobdetail2>
           </Canvas>
+
           <ToggleSaveBtn onClick={() => handleToggleSaved(detail)}>
             {state.jobs.find((item) => item.id === detail.id) ? (
               <svg

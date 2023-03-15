@@ -11,11 +11,17 @@ import RecentSearchValues from "./RecentSearchValues";
 
 import { Container } from "../../global/style";
 
+import { motion as mt } from "framer-motion";
 
 const Home = () => {
 
   return (
-    <>
+    <mt.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.8, ease: "easeIn" }}
+  >
       <Header />
       <Container>
         <div>
@@ -29,7 +35,7 @@ const Home = () => {
         <LeftBox /> 
       </Container>
       <Footer />
-    </>
+    </mt.div>
   );
 };
 

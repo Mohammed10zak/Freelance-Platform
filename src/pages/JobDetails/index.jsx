@@ -7,6 +7,8 @@ import Footer from "./../../components/Footer/index";
 
 import JobdetailsCard from "./JobdetailsCard";
 
+import { motion as mt } from "framer-motion";
+
 import { Title } from "./style";
 
 const JobDetails = () => {
@@ -29,12 +31,17 @@ const JobDetails = () => {
   }, [id]);
 
   return (
-    <>
+    <mt.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.75, ease: "easeOut" }}
+    >
       <Header />
       <Title>Job details</Title>
       <JobdetailsCard detail={jobdetails} />
       <Footer />
-    </>
+    </mt.div>
   );
 };
 

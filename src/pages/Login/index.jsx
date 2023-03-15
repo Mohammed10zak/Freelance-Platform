@@ -23,8 +23,11 @@ import {
   SubmitButton,
 } from "./style";
 import { schema } from "./validation";
+
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+
+import { motion as mt } from "framer-motion";
 
 function Login() {
   const { loading, setLoading, errors, setErrors, setToken, setAuthorized } =
@@ -84,7 +87,12 @@ function Login() {
   };
 
   return (
-    <>
+    <mt.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.75, ease: "easeOut" }}
+    >
       <Header form />
 
       <StyledForm onSubmit={handleSubmit}>
@@ -144,7 +152,7 @@ function Login() {
         <StyledLink to="/signup"> Sign Up now</StyledLink>
       </StyledForm>
       <Footer form />
-    </>
+    </mt.div>
   );
 }
 

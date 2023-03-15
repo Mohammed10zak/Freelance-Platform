@@ -32,6 +32,7 @@ import testimo from "../../assets/testimo.png";
 import certifi from "../../assets/certifi.png";
 import exp from "../../assets/exp.png";
 
+import { motion as mt } from "framer-motion";
 const Profile = () => {
   const [title, setTilte] = useState("");
   const [overView, setOverView] = useState("");
@@ -60,7 +61,12 @@ const Profile = () => {
   }, []);
 
   return (
-    <>
+    <mt.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.75, ease: "easeOut" }}
+    >
       <Header />
       <Box>
         <NameBox />
@@ -138,7 +144,7 @@ const Profile = () => {
         </Divc>
       </Testimonials>
       <Footer />
-    </>
+    </mt.div>
   );
 };
 

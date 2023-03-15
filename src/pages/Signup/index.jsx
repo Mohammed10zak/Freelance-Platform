@@ -25,6 +25,8 @@ import { API_URL } from "../../config/api";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
+import { motion as mt } from "framer-motion";
+
 const Signup = () => {
   const {
     setAuthorized,
@@ -100,7 +102,12 @@ const Signup = () => {
       });
   };
   return (
-    <>
+    <mt.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.75, ease: "easeOut" }}
+    >
       <Header form />
 
       <StyledForm onSubmit={handleSubmit}>
@@ -201,7 +208,7 @@ const Signup = () => {
         <StyledLink to="/login"> Log In</StyledLink>
       </StyledForm>
       <Footer form />
-    </>
+    </mt.div>
   );
 };
 
