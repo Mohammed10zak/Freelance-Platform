@@ -144,7 +144,7 @@ export default function SimpleAccordion() {
   return (
     <>
       <H2>Filter By</H2>
-      <Accordion style={{ padding: "10px" }}>
+      <Accordion style={{ padding: "10px" }} defaultExpanded={true}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel1a-content"
@@ -178,7 +178,8 @@ export default function SimpleAccordion() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion style={{ padding: "10px" }}>
+
+      <Accordion style={{ padding: "10px" }} defaultExpanded={true}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel2a-content"
@@ -205,7 +206,7 @@ export default function SimpleAccordion() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion style={{ padding: "10px" }}>
+      <Accordion style={{ padding: "10px" }} defaultExpanded={true}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel2a-content"
@@ -269,7 +270,7 @@ export default function SimpleAccordion() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion style={{ padding: "10px" }}>
+      <Accordion style={{ padding: "10px" }} defaultExpanded={true}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel1a-content"
@@ -305,7 +306,7 @@ export default function SimpleAccordion() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion style={{ padding: "10px" }}>
+      <Accordion style={{ padding: "10px" }} defaultExpanded={true}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel1a-content"
@@ -329,7 +330,7 @@ export default function SimpleAccordion() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion style={{ padding: "10px" }}>
+      <Accordion style={{ padding: "10px" }} defaultExpanded={true}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel1a-content"
@@ -357,7 +358,7 @@ export default function SimpleAccordion() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion style={{ padding: "10px" }}>
+      <Accordion style={{ padding: "10px" }} defaultExpanded={true}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel1a-content"
@@ -392,7 +393,7 @@ export default function SimpleAccordion() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion style={{ padding: "10px" }}>
+      <Accordion style={{ padding: "10px" }} defaultExpanded={true}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel1a-content"
@@ -427,7 +428,7 @@ export default function SimpleAccordion() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion style={{ padding: "10px" }}>
+      <Accordion style={{ padding: "10px" }} defaultExpanded={true}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel1a-content"
@@ -460,7 +461,7 @@ export default function SimpleAccordion() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion style={{ padding: "10px" }}>
+      <Accordion style={{ padding: "10px" }} defaultExpanded={true}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel1a-content"
@@ -486,7 +487,7 @@ export default function SimpleAccordion() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion style={{ padding: "10px" }}>
+      <Accordion style={{ padding: "10px" }} defaultExpanded={true}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon color="success" />}
           aria-controls="panel1a-content"
