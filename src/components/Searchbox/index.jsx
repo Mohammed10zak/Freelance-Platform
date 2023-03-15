@@ -41,6 +41,7 @@ const Searchbox = ({ width }) => {
     const searched = [...searchValue, search];
     setSearchValue((prevState) => [...prevState, search]);
     localStorage.setItem("searchValues", JSON.stringify(searched));
+    navigate("/redirectfilter")
   };
 
   return (
@@ -52,6 +53,7 @@ const Searchbox = ({ width }) => {
         options={allJobs.map((job) => job.title)}
         renderInput={(params) => (
           <TextField
+          placeholder="Search For Job"
             sx={{
               "& .MuiOutlinedInput-root": {
                 borderTopLeftRadius: "8px",
