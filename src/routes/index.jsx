@@ -1,5 +1,4 @@
 import React, { lazy } from "react";
-import { useEffect } from "react";
 import { Suspense } from "react";
 
 import { Routes, Route, Navigate } from "react-router-dom";
@@ -15,22 +14,14 @@ const Filter = lazy(() => import("./../pages/Filter/index"));
 const Profile = lazy(() => import("./../pages/Profile/index"));
 const JobDetails = lazy(() => import("./../pages/JobDetails/index"));
 
-
 const Routers = () => {
-  const { authorized, setAuthorized, setToken } = useAuthContext();
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setToken(token);
-      setAuthorized(true);
-    }
-  }, [setToken, setAuthorized]);
+  const { authorized } = useAuthContext();
 
   return (
+    
     <Suspense fallback={<Loading />}>
       <Routes>
-        <Route index element={<Navigate to="/login" />} />
+        <Route element={<Navigate to="/login" />} />
 
         <Route
           path="/login"
@@ -42,12 +33,13 @@ const Routers = () => {
         />
 
         <Route path="/" element={<ProtectedRoute />}>
-          <Route path="/home" element={<Home />} />
-          <Route path="/filter" element={<Filter />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/redirect" element={<Navigate to={"/profile"} />} />
-          <Route path="/JobDetails/:id" element={<JobDetails/>} />
+          <Route path="home" element={<Home />} />
+          <Route path="filter" element={<Filter />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="redirect" element={<Navigate to={"/profile"} />} />
+          <Route path="redirectfilter" element={<Navigate to={"/filter"} />} />
 
+          <Route path="/JobDetails/:id" element={<JobDetails />} />
         </Route>
         <Route path="/*" element={<h3>Page not Found</h3>} />
       </Routes>
