@@ -21,7 +21,7 @@ const Routers = () => {
     
     <Suspense fallback={<Loading />}>
       <Routes>
-        <Route element={<Navigate to="/login" />} />
+        <Route index element={<Navigate to="/login" />} />
 
         <Route
           path="/login"

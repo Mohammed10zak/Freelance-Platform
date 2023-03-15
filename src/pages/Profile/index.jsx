@@ -1,17 +1,37 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+
+import axios from "axios";
+
+import { Divider } from "@mui/material";
+
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import OverViewModal from "../../components/Modals/OverViewModal";
 import RateModal from "../../components/Modals/RateModal";
 import SkillsModal from "../../components/Modals/SkillsModal";
 import TitleModal from "../../components/Modals/TitleModal";
-import { Styledskill } from "../../components/JobCard/ListOfSkills/style";
-import { Box, Div, InfoBox, LeftBox, Portfolio, Skills, Span } from "./style";
-import Header from "../../components/Header";
 import NameBox from "./NameBox";
-import portfolio from "../../assets/portfolio.png";
 import Rightbox from "./Rightbox";
-import { Divider } from "@mui/material";
-import Footer from "../../components/Footer";
+
+import { Styledskill } from "../../components/JobCard/ListOfSkills/style";
+import {
+  Box,
+  Div,
+  Divc,
+  InfoBox,
+  LeftBox,
+  P,
+  Portfolio,
+  Skills,
+  Span,
+  Testimonials,
+} from "./style";
+
+import portfolio from "../../assets/portfolio.png";
+import testimo from "../../assets/testimo.png";
+import certifi from "../../assets/certifi.png";
+import exp from "../../assets/exp.png";
+
 const Profile = () => {
   const [title, setTilte] = useState("");
   const [overView, setOverView] = useState("");
@@ -44,7 +64,7 @@ const Profile = () => {
       <Header />
       <Box>
         <NameBox />
-        <p style={{display:"none"}}>{img}</p>
+        <p style={{ display: "none" }}>{img}</p>
         <InfoBox>
           <Rightbox />
           <LeftBox>
@@ -87,6 +107,36 @@ const Profile = () => {
           </LeftBox>
         </InfoBox>
       </Box>
+      <Testimonials>
+        <h3>Testimonials</h3>
+        <Divc>
+          <img src={testimo} alt="testemo" />
+          <p>
+            Showcasing client testimonials can strengthen your profile. (+5%)
+          </p>
+        </Divc>
+      </Testimonials>
+      <Testimonials>
+        <h3>Certifications</h3>
+        <Divc>
+          <img src={certifi} alt="testemo" />
+          <P>
+            Listing your certifications can help prove your specific knowledge
+            or abilities. (+10%) You can add them manually or import them from
+            Credly.{" "}
+          </P>
+        </Divc>
+      </Testimonials>{" "}
+      <Testimonials>
+        <h3>Other Experiences</h3>
+        <Divc>
+          <img src={exp} alt="testemo" />
+          <p>
+            Highlighting relevant experiences can boost your visibility in our
+            search results. (+5%)
+          </p>
+        </Divc>
+      </Testimonials>
       <Footer />
     </>
   );

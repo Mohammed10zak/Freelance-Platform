@@ -82,3 +82,26 @@ export const AccountIMg = styled.div`
     height: 100px;
   }
 `
+
+export const Testimonials =styled.div`
+
+  border: 1px solid #d5e0d5;
+  border-radius: 10px;
+width:1120px;
+padding:10px;
+margin:30px auto;
+
+`
+
+export const Divc=styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+`
+
+export const P = styled.p `
+width:600px;
+text-align: center;
+
+`
