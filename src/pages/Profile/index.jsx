@@ -44,7 +44,7 @@ const Profile = () => {
       <Header />
       <Box>
         <NameBox />
-        <p>Photo Link: {img}</p>
+        <p style={{display:"none"}}>{img}</p>
         <InfoBox>
           <Rightbox />
           <LeftBox>

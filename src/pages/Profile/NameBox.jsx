@@ -1,8 +1,8 @@
-import { Avatar, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import React from "react";
 import ImgModal from "../../components/Modals/ImgModal";
 import { Span } from "../JobDetails/JobdetailsCard/style";
-import { Name } from "./style";
+import { AccountIMg, Name } from "./style";
 import UploadImg from "./UploadImg";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
@@ -17,13 +17,9 @@ const NameBox = () => {
 
   return (
     <Name>
-      <Avatar
-        alt="Remy Sharp"
-        sx={{ width: 95, height: 95 }}
-        style={{ position: "relative" }}
-      >
+      <AccountIMg>
         <UploadImg />
-      </Avatar>
+      </AccountIMg>
       <ImgModal />
       <div>
         <h2>{name}</h2>
@@ -41,14 +37,14 @@ const NameBox = () => {
         <Button
           variant="outlined"
           color="success"
-          style={{ borderRadius: "30px", width: "200px", margin: "10px" }}
+          style={{ borderRadius: "30px", width: "200px", marginBottom: "10px" }}
         >
           See public view
         </Button>{" "}
         <Button
           variant="contained"
           color="success"
-          style={{ borderRadius: "30px", width: "200px", margin: "10px" }}
+          style={{ borderRadius: "30px", width: "200px" }}
         >
           {" "}
           Profile Setting

@@ -68,3 +68,17 @@ export const Skills = styled.div`
   flex-wrap: wrap;
   width: 600px;
 `;
+
+export const AccountIMg = styled.div`
+
+  width: 100px;
+  height: 100px;
+
+  margin-left: 6px;
+
+  & img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+`
