@@ -7,7 +7,6 @@ import axios from "axios";
 import { Navigate } from "react-router-dom";
 import styled from "styled-components";
 import { Button, Input } from "@mui/material";
-import { CRUDS_API_URL } from "../../config/api";
 
 const style = {
   position: "absolute",
@@ -37,7 +36,7 @@ const ImgModal = () => {
     (async () => {
       try {
         const res = await axios.get(
-          `${CRUDS_API_URL}/personalInformation`
+          `${process.env.REACT_APP_CRUDS_API_URL}/personalInformation`
         );
         if (res) {
           setNewImg(res.data[0].image);
@@ -63,7 +62,7 @@ const ImgModal = () => {
     (async () => {
       try {
         const res = await axios.put(
-          `${CRUDS_API_URL}/personalInformation/1`,
+          `${process.env.REACT_APP_CRUDS_API_URL}/personalInformation/1`,
           {
             title: title,
             overview: overView,

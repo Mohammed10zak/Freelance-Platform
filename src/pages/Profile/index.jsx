@@ -33,7 +33,6 @@ import certifi from "../../assets/certifi.png";
 import exp from "../../assets/exp.png";
 
 import { motion as mt } from "framer-motion";
-import { CRUDS_API_URL } from "../../config/api";
 const Profile = () => {
   const [title, setTilte] = useState("");
   const [overView, setOverView] = useState("");
@@ -46,7 +45,7 @@ const Profile = () => {
     (async () => {
       try {
         const res = await axios.get(
-          `${CRUDS_API_URL}/personalInformation`
+          `${process.env.REACT_APP_CRUDS_API_URL}/personalInformation`
         );
         if (res) {
           setTilte(res.data[0].title);

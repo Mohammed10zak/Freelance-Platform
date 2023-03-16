@@ -8,7 +8,6 @@ import { Navigate } from "react-router-dom";
 import styled from "styled-components";
 import EditIcon from "@mui/icons-material/Edit";
 import dollar from "../../assets/dollar.png";
-import { CRUDS_API_URL } from "../../config/api";
 
 const style = {
   position: "absolute",
@@ -53,7 +52,7 @@ const RateModal = () => {
     (async () => {
       try {
         const res = await axios.get(
-          `${CRUDS_API_URL}/personalInformation`
+          `${process.env.REACT_APP_CRUDS_API_URL}/personalInformation`
         );
         if (res) {
           setNewRate(res.data[0].rate);
@@ -84,7 +83,7 @@ const RateModal = () => {
     (async () => {
       try {
         const res = await axios.put(
-          `${CRUDS_API_URL}/personalInformation/1`,
+          `${process.env.REACT_APP_CRUDS_API_URL}/personalInformation/1`,
           {
             rate: newRate,
             overview: overView,

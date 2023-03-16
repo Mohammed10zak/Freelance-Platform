@@ -9,7 +9,6 @@ import { useAuthContext } from "../../context/AuthContext";
 
 import JobCard from "../JobCard";
 import Loading from "./../Loading/index";
-import { CRUDS_API_URL } from "../../config/api";
 
 function JobDetails() {
   const [job, setJob] = useState([]);
@@ -18,7 +17,7 @@ function JobDetails() {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get(`${CRUDS_API_URL}/jobs`);
+        const res = await axios.get(`${process.env.REACT_APP_CRUDS_API_URL}/jobs`);
         if (res) {
           setJob(res.data);
         }

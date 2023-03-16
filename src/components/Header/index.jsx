@@ -26,6 +26,7 @@ export default function Header({ form }) {
     setShowDiv(!showDiv);
   };
 
+
   const handleOnlineClick = () => {
     setIsOnline(true);
   };
